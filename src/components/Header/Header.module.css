@@ -1,0 +1,39 @@
+.header {
+  padding: 22px 32px;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-muted);
+
+  position: relative;
+}
+
+.logo {
+  font-family: "Antonio", sans-serif;
+  font-size: calc(28 / 16 * 1rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -1.05px;
+  line-height: 1;
+}
+
+/* Teblet Styles */
+@media (max-width: calc(768 / 16 * 1rem)) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: calc(40 / 16 * 1rem);
+  }
+}
+
+/* Mobile styles */
+@media (max-width: calc(472 / 16 * 1rem)) {
+  .header {
+    flex-direction: row;
+    align-items: baseline;
+
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

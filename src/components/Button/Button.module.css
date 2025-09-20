@@ -1,0 +1,25 @@
+/* Default */
+.button {
+  --font-family: "Leauge Spartan", sans-serif;
+  --font-size: calc(12 / 16 * 1rem);
+  --font-weight: 700;
+  --letter-spacing: calc(2.5 / 16 * 1rem);
+  --line-height: calc(25 / 16 * 1rem);
+
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  line-height: var(--line-height);
+  text-transform: uppercase;
+  border: 1px solid var(--color-muted-dark);
+  padding: 12px 28px;
+  cursor: pointer;
+}
+
+.button span {
+  color: var(--color-muted);
+  margin-right: 28px;
+}
