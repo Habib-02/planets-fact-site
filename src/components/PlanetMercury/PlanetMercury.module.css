@@ -1,0 +1,197 @@
+.wrapper {
+  max-width: 1070px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.planetDescriptionWrapper {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 80px 0;
+}
+
+.planetPicture img {
+  max-width: 100%;
+  display: block;
+}
+
+.planetPicture {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.planetDescription {
+  flex-basis: 350px;
+}
+
+.planetDescription blockquote {
+  max-width: 40ch;
+  margin: 24px 0;
+  color: var(--color-muted-light);
+}
+
+.planetDescription p {
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.planetDescription a {
+  color: var(--color-muted);
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.planetDescription svg {
+  width: 14px;
+  height: 14px;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.buttonGroup button:first-of-type {
+  /* background-color: var(--color-mercury); */
+}
+
+.planetInformation {
+  padding-bottom: 80px;
+}
+
+.planetInformation ul {
+  list-style: none;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.planetInformation li {
+  border: 1px solid var(--color-muted-dark);
+  padding: 20px;
+  flex: 1;
+  min-width: 140px;
+  max-width: 225px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.planetInformation span:first-of-type {
+  color: var(--color-muted);
+  text-transform: uppercase;
+  font-family: "League Spartan", sans-serif;
+  font-size: calc(10 / 16 * 1rem);
+  letter-spacing: calc(1.6 / 16 * 1rem);
+  font-weight: 700;
+}
+.planetInformation span:last-of-type {
+  font-family: "Antonio", sans-serif;
+  font-size: calc(30 / 16 * 1rem);
+  line-height: calc(52 / 16 * 1rem);
+  letter-spacing: calc(-1.5 / 16 * 1rem);
+  font-weight: 500;
+
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+/* Tablet styles */
+
+@media (max-width: calc(768 / 16 * 1rem)) {
+  .planetDescriptionWrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .planetDescription {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .planetDescription h1 {
+    font-family: "Antonio", sans-serif;
+    font-size: var(--font-heading-two);
+    line-height: calc(52 / 16 * 1rem);
+    letter-spacing: calc(-1.5 / 16 * 1rem);
+    font-weight: 500;
+  }
+
+  .buttonGroup {
+    margin-top: 0;
+  }
+
+  .planetInformation span:first-of-type {
+    font-size: calc(8 / 16 * 1rem);
+  }
+
+  .planetInformation span:last-of-type {
+    font-size: calc(24 / 16 * 1rem);
+  }
+}
+
+/* Mobile styles */
+
+@media (max-width: calc(472 / 16 * 1rem)) {
+  .wrapper {
+    position: relative;
+    padding: 0 24px;
+  }
+  .planetDescriptionWrapper {
+    text-align: center;
+    padding-top: 128px;
+    margin: 0;
+  }
+  .planetDescription p {
+    justify-content: center;
+  }
+  .buttonGroup {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid var(--color-muted-dark);
+
+    & span {
+      display: none;
+    }
+  }
+
+  .planetInformation ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .planetInformation li {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+
+  .planetInformation span:first-of-type {
+    line-height: 1;
+    font-size: calc(10 / 16 * 1rem);
+  }
+  .planetInformation span:last-of-type {
+    line-height: 1;
+  }
+}

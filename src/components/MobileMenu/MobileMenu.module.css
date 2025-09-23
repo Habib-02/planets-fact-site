@@ -26,6 +26,7 @@
   left: 0;
   background-color: var(--color-background);
   padding: 44px 24px;
+  z-index: 1;
 
   transform: translateX(-100%);
   transition: transform 0.3s ease;

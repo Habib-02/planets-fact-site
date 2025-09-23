@@ -1,14 +1,12 @@
 import Button from "../Button";
 import Header from "../Header";
+import PlanetMercury from "../PlanetMercury";
 
 function App() {
   return (
     <>
       <Header />
-      <p>Planets Facts</p>
-      <Button>
-        <span>01</span> Default
-      </Button>
+      <PlanetMercury />
     </>
   );
 }

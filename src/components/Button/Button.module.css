@@ -17,9 +17,36 @@
   border: 1px solid var(--color-muted-dark);
   padding: 12px 28px;
   cursor: pointer;
+
+  display: flex;
+  gap: 28px;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-muted-dark);
+  }
 }
 
 .button span {
   color: var(--color-muted);
-  margin-right: 28px;
+}
+
+@media (max-width: calc(768 / 16 * 1rem)) {
+  .button {
+    padding: 8px 20px;
+    gap: 14px;
+    font-size: calc(10 / 16 * 1rem);
+  }
+}
+
+@media (max-width: calc(472 / 16 * 1rem)) {
+  .button {
+    padding: 20px 0;
+    border: none;
+
+    &:hover,
+    &:focus {
+      border-bottom: 4px solid var(--color-mercury);
+    }
+  }
 }
