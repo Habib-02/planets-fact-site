@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import styles from "./Navbar.module.css";
 
 function Navbar() {
@@ -5,44 +6,44 @@ function Navbar() {
     <nav className={styles.nav}>
       <ul className={styles.navItems}>
         <li>
-          <a className={styles.navLink} href="">
+          <NavLink to="/planet/mercury" className={styles.navLink} href="">
             mercury
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className={styles.navLink} href="">
+          <NavLink to="/planet/venus" className={styles.navLink} href="">
             venus
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className={styles.navLink} href="">
+          <NavLink to="/planet/earth" className={styles.navLink} href="">
             earth
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className={styles.navLink} href="">
+          <NavLink to="/planet/mars" className={styles.navLink} href="">
             mars
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className={styles.navLink} href="">
+          <NavLink to="/planet/jupiter" className={styles.navLink} href="">
             jupiter
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className={styles.navLink} href="">
+          <NavLink to="/planet/saturn" className={styles.navLink} href="">
             saturn
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className={styles.navLink} href="">
+          <NavLink to="/planet/uranus" className={styles.navLink} href="">
             uranus
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className={styles.navLink} href="">
-            naptune
-          </a>
+          <NavLink to="/planet/neptune" className={styles.navLink} href="">
+            neptune
+          </NavLink>
         </li>
       </ul>
     </nav>

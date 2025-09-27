@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 
 import styles from "./MobileMenu.module.css";
 import { useState } from "react";
+import { NavLink } from "react-router";
 
 function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,76 +25,76 @@ function MobileMenu() {
       >
         <ul>
           <li>
-            <a className={styles.navLink} href="">
+            <NavLink to="/planet/mercury" className={styles.navLink} href="">
               <span className={`${styles.planet} ${styles.mercury}`}></span>
               <span>Mercury</span>
               <span className="arrow">
                 <ChevronRight />
               </span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={styles.navLink} href="">
+            <NavLink to="/planet/venus" className={styles.navLink} href="">
               <span className={`${styles.planet} ${styles.venus}`}></span>
               <span>Venus</span>
               <span className="arrow">
                 <ChevronRight />
               </span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={styles.navLink} href="">
+            <NavLink to="/planet/earth" className={styles.navLink} href="">
               <span className={`${styles.planet} ${styles.earth}`}></span>
               <span>earth</span>
               <span className="arrow">
                 <ChevronRight />
               </span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={styles.navLink} href="">
+            <NavLink to="/planet/mars" className={styles.navLink} href="">
               <span className={`${styles.planet} ${styles.mars}`}></span>
               <span>mars</span>
               <span className="arrow">
                 <ChevronRight />
               </span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={styles.navLink} href="">
+            <NavLink to="/planet/jupiter" className={styles.navLink} href="">
               <span className={`${styles.planet} ${styles.jupiter}`}></span>
               <span>jupiter</span>
               <span className="arrow">
                 <ChevronRight />
               </span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={styles.navLink} href="">
+            <NavLink to="/planet/saturn" className={styles.navLink} href="">
               <span className={`${styles.planet} ${styles.saturn}`}></span>
               <span>saturn</span>
               <span className="arrow">
                 <ChevronRight />
               </span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={styles.navLink} href="">
+            <NavLink to="/planet/uranus" className={styles.navLink} href="">
               <span className={`${styles.planet} ${styles.uranus}`}></span>
               <span>uranus</span>
               <span className="arrow">
                 <ChevronRight />
               </span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className={styles.navLink} href="">
+            <NavLink to="/planet/naptune" className={styles.navLink} href="">
               <span className={`${styles.planet} ${styles.naptune}`}></span>
               <span>Naptune</span>
               <span className="arrow">
                 <ChevronRight />
               </span>
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>

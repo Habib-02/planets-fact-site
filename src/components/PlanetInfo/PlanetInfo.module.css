@@ -7,7 +7,8 @@
 .planetDescriptionWrapper {
   display: flex;
   align-items: center;
-  gap: 32px;
+  /* gap: 32px; */
+  gap: clamp(3rem, -14.28rem + 36vw, 9.375rem);
   margin: 80px 0;
 }
 
@@ -57,10 +58,6 @@
   flex-direction: column;
   gap: 16px;
   margin-top: 40px;
-}
-
-.buttonGroup button:first-of-type {
-  /* background-color: var(--color-mercury); */
 }
 
 .planetInformation {
