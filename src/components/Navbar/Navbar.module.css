@@ -19,6 +19,8 @@
   text-decoration: none;
   color: var(--color-muted);
   line-height: 1;
+  padding: 22px 0;
+  display: block;
 }
 
 @media (max-width: calc(768 / 16 * 1rem)) {

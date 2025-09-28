@@ -7,8 +7,14 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Navigate to="/planet/mercury" />} />
-        <Route path="planet/:planetName" element={<PlanetInfo />} />
+        <Route
+          index
+          element={<Navigate to="planet/mercury/overview" replace />}
+        />
+        <Route
+          path="planet/:planetName/:view?"
+          element={<PlanetInfo />}
+        ></Route>
       </Route>
     </Routes>
   );

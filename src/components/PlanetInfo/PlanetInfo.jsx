@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link, useParams } from "react-router";
+import { Link, NavLink, useParams } from "react-router";
 
 import styles from "./PlanetInfo.module.css";
 import Button from "../Button";
@@ -8,11 +8,25 @@ import Spinner from "../Spinner";
 
 import { SquareArrowOutUpRight } from "lucide-react";
 
+const planetColors = {
+  mercury: "var(--color-mercury)",
+  venus: "var(--color-venus)",
+  earth: "var(--color-earth)",
+  mars: "var(--color-mars)",
+  jupiter: "var(--color-jupiter)",
+  saturn: "var(--color-saturn)",
+  uranus: "var(--color-uranus)",
+  neptune: "var(--color-naptune)",
+};
+
 function PlanetInfo() {
   const [planets, setPlanets] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { planetName } = useParams();
+  const { planetName, view } = useParams();
+  const currentView = view || "overview";
+
+  const planetColor = planetColors[planetName];
 
   const specificPlanetDetail = planets.find(
     (planet) => planetName === planet.name.toLowerCase()
@@ -31,37 +45,75 @@ function PlanetInfo() {
   if (loading) return <Spinner />;
   if (!specificPlanetDetail) return <h1>Planet not found</h1>;
 
-  const { name, overview, rotation, revolution, radius, temperature, images } =
-    specificPlanetDetail;
+  const {
+    name,
+    overview,
+    structure,
+    geology,
+    rotation,
+    revolution,
+    radius,
+    temperature,
+    images,
+  } = specificPlanetDetail;
+
+  const viewMap = {
+    overview: {
+      content: overview.content,
+      source: overview.source,
+      image: images.planet,
+    },
+    structure: {
+      content: structure.content,
+      source: structure.source,
+      image: images.internal,
+    },
+    surface: {
+      content: geology.content,
+      source: geology.source,
+      image: images.geology,
+    },
+  };
+
+  const { content, source, image } = viewMap[currentView];
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.planetDescriptionWrapper}>
         <div className={styles.planetPicture}>
-          <img src={images.planet} alt="" />
+          <img src={image} alt="" />
         </div>
         <div className={styles.planetDescription}>
           <div>
             <h1 className={styles.planetName}>{name}</h1>
-            <blockquote cite={overview.source} className={styles.description}>
-              {overview.content}
+            <blockquote cite={source} className={styles.description}>
+              {content}
             </blockquote>
             <p>
               Source:{" "}
-              <a href={overview.source} target="_blank">
+              <a href={source} target="_blank">
                 Wikipedia <SquareArrowOutUpRight />{" "}
               </a>
             </p>
           </div>
           <div className={styles.buttonGroup}>
-            <Button>
+            <Button
+              to={`/planet/${planetName}/overview`}
+              activeColor={planetColor}
+            >
               <span>01</span> Overview
             </Button>
-            <Button>
-              <span>02</span> Structure
+            <Button
+              to={`/planet/${planetName}/structure`}
+              activeColor={planetColor}
+            >
+              <span>01</span> Structure
             </Button>
-            <Button>
-              <span>03</span> Surface
+            <Button
+              to={`/planet/${planetName}/surface`}
+              activeColor={planetColor}
+            >
+              <span>01</span> Surface
             </Button>
           </div>
         </div>
