@@ -7,12 +7,9 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route index element={<Navigate to="/planet/mercury/overview" />} />
         <Route
-          index
-          element={<Navigate to="planet/mercury/overview" replace />}
-        />
-        <Route
-          path="planet/:planetName/:view?"
+          path="/planet/:planetName/:view?"
           element={<PlanetInfo />}
         ></Route>
       </Route>
