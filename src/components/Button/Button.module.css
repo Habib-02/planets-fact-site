@@ -32,7 +32,6 @@
 }
 
 .button.active {
-  background-color: var(--color-mercury);
   color: var(--color-text);
 }
 
@@ -52,10 +51,5 @@
   .button {
     padding: 20px 0;
     border: none;
-
-    &:hover,
-    &:focus {
-      border-bottom: 4px solid var(--color-mercury);
-    }
   }
 }

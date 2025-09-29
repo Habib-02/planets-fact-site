@@ -1,7 +1,7 @@
 import { NavLink, useParams } from "react-router";
 import styles from "./Button.module.css";
 
-function Button({ children, to, activeColor, ...delegated }) {
+function Button({ children, to, activeColor, variant, ...delegated }) {
   const { view } = useParams();
   const currentView = view || "overview";
 
@@ -13,7 +13,13 @@ function Button({ children, to, activeColor, ...delegated }) {
       <NavLink
         className={`${styles.button} ${isActive ? styles.active : ""}`}
         to={to}
-        style={isActive ? { backgroundColor: activeColor } : {}}
+        style={
+          isActive
+            ? variant === "mobile"
+              ? { borderBottom: `4px solid ${activeColor}` }
+              : { backgroundColor: activeColor }
+            : {}
+        }
         {...delegated}
       >
         {children}

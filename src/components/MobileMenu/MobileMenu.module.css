@@ -4,60 +4,47 @@
   }
 }
 
-.hamburgerButton {
-  padding: 0;
+.mobileNavigation {
   background-color: transparent;
+  color: var(--color-muted-light);
   border: none;
 }
 
-.hamburgerButton svg {
+.mobileNavigation[data-state="open"] {
   color: var(--color-text);
 }
 
-.hamburgerButtonActive svg {
-  color: var(--color-muted);
-}
-
-.mobileNav {
+.overlay {
+  background-color: var(--color-background);
   position: fixed;
-  top: 84px;
-  right: 0;
+  top: 70px;
   bottom: 0;
   left: 0;
-  background-color: var(--color-background);
-  padding: 44px 24px;
-  z-index: 1;
-
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  right: 0;
 }
 
-.open {
-  transform: translateX(0);
+.content {
+  position: fixed;
+  top: 100px;
+  left: 24px;
+  right: 24px;
+  bottom: 0;
 }
 
-.open .hamburgerButton svg {
-  color: var(--color-muted);
-}
-
-.close {
-  transform: translateX(-100%);
-}
-
-.mobileNav ul {
+.nav ul {
   padding: 0;
   list-style: none;
 }
 
-.mobileNav li {
+.nav li {
   padding: 20px 0;
 }
 
-.mobileNav li:first-of-type {
+.nav li:first-of-type {
   padding-top: 0;
 }
 
-.mobileNav li:not(:last-of-type) {
+.nav li:not(:last-of-type) {
   border-bottom: 1px solid var(--color-muted-dark);
 }
 
@@ -85,29 +72,4 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-}
-
-.mercury {
-  background-color: var(--color-mercury);
-}
-.venus {
-  background-color: var(--color-venus);
-}
-.earth {
-  background-color: var(--color-earth);
-}
-.mars {
-  background-color: var(--color-mars);
-}
-.jupiter {
-  background-color: var(--color-jupiter);
-}
-.saturn {
-  background-color: var(--color-saturn);
-}
-.uranus {
-  background-color: var(--color-uranus);
-}
-.naptune {
-  background-color: var(--color-naptune);
 }

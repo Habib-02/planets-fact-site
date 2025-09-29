@@ -4,101 +4,65 @@ import { Menu } from "lucide-react";
 import { ChevronRight } from "lucide-react";
 
 import styles from "./MobileMenu.module.css";
-import { useState } from "react";
 import { NavLink } from "react-router";
 
+const planetColors = {
+  mercury: "var(--color-mercury)",
+  venus: "var(--color-venus)",
+  earth: "var(--color-earth)",
+  mars: "var(--color-mars)",
+  jupiter: "var(--color-jupiter)",
+  saturn: "var(--color-saturn)",
+  uranus: "var(--color-uranus)",
+  neptune: "var(--color-naptune)",
+};
+
 function MobileMenu() {
-  const [isOpen, setIsOpen] = useState(false);
+  const planets = [
+    "mercury",
+    "venus",
+    "earth",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+  ];
 
   return (
-    <div className={styles.mobileNavigation}>
-      <button
-        className={`${isOpen ? styles.hamburgerButtonActive : ""} ${
-          styles.hamburgerButton
-        }`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
+    <Dialog.Root>
+      <Dialog.Trigger className={styles.mobileNavigation}>
         <Menu />
-      </button>
-      <nav
-        className={`${isOpen ? styles.open : styles.close} ${styles.mobileNav}`}
-      >
-        <ul>
-          <li>
-            <NavLink to="/planet/mercury" className={styles.navLink} href="">
-              <span className={`${styles.planet} ${styles.mercury}`}></span>
-              <span>Mercury</span>
-              <span className="arrow">
-                <ChevronRight />
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/planet/venus" className={styles.navLink} href="">
-              <span className={`${styles.planet} ${styles.venus}`}></span>
-              <span>Venus</span>
-              <span className="arrow">
-                <ChevronRight />
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/planet/earth" className={styles.navLink} href="">
-              <span className={`${styles.planet} ${styles.earth}`}></span>
-              <span>earth</span>
-              <span className="arrow">
-                <ChevronRight />
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/planet/mars" className={styles.navLink} href="">
-              <span className={`${styles.planet} ${styles.mars}`}></span>
-              <span>mars</span>
-              <span className="arrow">
-                <ChevronRight />
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/planet/jupiter" className={styles.navLink} href="">
-              <span className={`${styles.planet} ${styles.jupiter}`}></span>
-              <span>jupiter</span>
-              <span className="arrow">
-                <ChevronRight />
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/planet/saturn" className={styles.navLink} href="">
-              <span className={`${styles.planet} ${styles.saturn}`}></span>
-              <span>saturn</span>
-              <span className="arrow">
-                <ChevronRight />
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/planet/uranus" className={styles.navLink} href="">
-              <span className={`${styles.planet} ${styles.uranus}`}></span>
-              <span>uranus</span>
-              <span className="arrow">
-                <ChevronRight />
-              </span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/planet/naptune" className={styles.navLink} href="">
-              <span className={`${styles.planet} ${styles.naptune}`}></span>
-              <span>Naptune</span>
-              <span className="arrow">
-                <ChevronRight />
-              </span>
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </div>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay className={styles.overlay} />
+        <Dialog.Content className={styles.content}>
+          <nav className={styles.nav}>
+            <ul>
+              {planets.map((planet) => (
+                <li key={planet}>
+                  <Dialog.Close asChild>
+                    <NavLink
+                      to={`planet/${planet}/overview`}
+                      className={styles.navLink}
+                    >
+                      <span
+                        style={{ backgroundColor: planetColors[planet] }}
+                        className={`${styles.planet} ${styles.mercury}`}
+                      ></span>
+                      {planet}
+                      <span className="arrow">
+                        <ChevronRight />
+                      </span>
+                    </NavLink>
+                  </Dialog.Close>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }
 

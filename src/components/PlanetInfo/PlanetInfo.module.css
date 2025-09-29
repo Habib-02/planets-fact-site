@@ -53,7 +53,11 @@
   height: 14px;
 }
 
-.buttonGroup {
+.mobile.buttonGroup {
+  display: none;
+}
+
+.desktop.buttonGroup {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -155,7 +159,10 @@
   .planetDescription p {
     justify-content: center;
   }
-  .buttonGroup {
+  .desktop.buttonGroup {
+    display: none;
+  }
+  .mobile.buttonGroup {
     display: flex;
     align-items: center;
     justify-content: space-evenly;

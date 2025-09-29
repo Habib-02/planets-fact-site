@@ -96,24 +96,53 @@ function PlanetInfo() {
               </a>
             </p>
           </div>
-          <div className={styles.buttonGroup}>
+          {/* Desktop Button Group */}
+          <div className={`${styles.desktop} ${styles.buttonGroup}`}>
             <Button
               to={`/planet/${planetName}/overview`}
               activeColor={planetColor}
+              variant="desktop"
             >
               <span>01</span> Overview
             </Button>
             <Button
               to={`/planet/${planetName}/structure`}
               activeColor={planetColor}
+              variant="desktop"
             >
-              <span>01</span> Structure
+              <span>02</span> Structure
             </Button>
             <Button
               to={`/planet/${planetName}/surface`}
               activeColor={planetColor}
+              variant="desktop"
             >
-              <span>01</span> Surface
+              <span>03</span> Surface
+            </Button>
+          </div>
+
+          {/* Mobile Button Group */}
+          <div className={`${styles.mobile} ${styles.buttonGroup}`}>
+            <Button
+              to={`/planet/${planetName}/overview`}
+              activeColor={planetColor}
+              variant="mobile"
+            >
+              Overview
+            </Button>
+            <Button
+              to={`/planet/${planetName}/structure`}
+              activeColor={planetColor}
+              variant="mobile"
+            >
+              Structure
+            </Button>
+            <Button
+              to={`/planet/${planetName}/surface`}
+              activeColor={planetColor}
+              variant="mobile"
+            >
+              Surface
             </Button>
           </div>
         </div>
