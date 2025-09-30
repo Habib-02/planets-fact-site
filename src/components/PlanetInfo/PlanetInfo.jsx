@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link, NavLink, useParams } from "react-router";
+import { useParams } from "react-router";
 
 import styles from "./PlanetInfo.module.css";
 import Button from "../Button";
@@ -62,26 +62,34 @@ function PlanetInfo() {
       content: overview.content,
       source: overview.source,
       image: images.planet,
+      geologyImg: null,
     },
     structure: {
       content: structure.content,
       source: structure.source,
       image: images.internal,
+      geologyImg: null,
     },
     surface: {
       content: geology.content,
       source: geology.source,
-      image: images.geology,
+      image: images.planet,
+      geologyImg: images.geology,
     },
   };
 
-  const { content, source, image } = viewMap[currentView];
+  const { content, source, image, geologyImg } = viewMap[currentView];
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.planetDescriptionWrapper}>
-        <div className={styles.planetPicture}>
+        <div
+          className={`${styles.planetPicture} ${styles[name.toLowerCase()]}`}
+        >
           <img src={image} alt="" />
+          {geologyImg && (
+            <img className={styles.geologyImg} src={geologyImg} alt="" />
+          )}
         </div>
         <div className={styles.planetDescription}>
           <div>

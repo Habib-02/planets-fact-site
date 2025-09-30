@@ -21,7 +21,21 @@
   flex: 1;
   display: flex;
   justify-content: center;
+
+  position: relative;
 }
+
+.geologyImg {
+  width: 150px;
+  position: absolute;
+  top: 80%;
+}
+
+.planetPicture.jupiter .geologyImg,
+.planetPicture.saturn .geologyImg {
+  top: 60%;
+}
+
 .planetDescription {
   flex-basis: 350px;
 }
@@ -114,6 +128,7 @@
   .planetDescriptionWrapper {
     flex-direction: column;
     justify-content: center;
+    gap: 88px;
   }
 
   .planetDescription {

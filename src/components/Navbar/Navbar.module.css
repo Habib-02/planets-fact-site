@@ -28,6 +28,7 @@
     gap: clamp(1.25rem, 0.475rem + 3.308vw, 2.063rem);
     flex-wrap: wrap;
     justify-content: center;
+    row-gap: 0;
   }
 }
 
