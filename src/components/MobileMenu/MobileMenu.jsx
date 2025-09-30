@@ -1,4 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 import { Menu } from "lucide-react";
 import { ChevronRight } from "lucide-react";
@@ -36,7 +37,10 @@ function MobileMenu() {
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className={styles.overlay} />
-        <Dialog.Content className={styles.content}>
+        <Dialog.Content aria-describedby={undefined} className={styles.content}>
+          <VisuallyHidden.Root>
+            <Dialog.Title className="DialogTitle">Menu Items</Dialog.Title>
+          </VisuallyHidden.Root>
           <nav className={styles.nav}>
             <ul>
               {planets.map((planet) => (
